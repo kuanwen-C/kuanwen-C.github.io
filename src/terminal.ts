@@ -210,13 +210,29 @@ export function initTerminal(): void {
     button.addEventListener("click", () => void run(button.dataset.cmd ?? ""));
   });
 
-  // "/" jumps to the terminal from anywhere on the page
+  // "/" jumps to the terminal from anywhere on the page.
+  // The physical key (e.code) is checked as well as the character, because with a
+  // Chinese/Japanese input method switched on the browser reports the key as
+  // "Process" (or a phonetic symbol) rather than "/".
+  let slashPending = false;
+  const isSlash = (e: KeyboardEvent) => e.code === "Slash" || e.key === "/";
+
   document.addEventListener("keydown", (e) => {
     const target = e.target as HTMLElement;
-    if (e.key !== "/" || target.tagName === "INPUT" || target.tagName === "TEXTAREA") return;
+    const typing = target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable;
+    if (!isSlash(e) || typing || e.metaKey || e.ctrlKey || e.altKey) return;
     e.preventDefault();
+    slashPending = true;
+  });
+
+  // Focus on key release: by then an input method has finished with this keystroke,
+  // so it cannot leak a stray character into the prompt.
+  document.addEventListener("keyup", (e) => {
+    if (!slashPending || !isSlash(e)) return;
+    slashPending = false;
     box.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
     input.focus({ preventScroll: true });
+    box.classList.add("attention"); // pulse the frame so the jump is noticeable
   });
 
   void intro();
