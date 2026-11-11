@@ -1,6 +1,6 @@
 # Steven (Kuan-Wen) Chen — portfolio
 
-A single-page portfolio with an interactive terminal, built by hand with Vite and TypeScript (no framework).
+A single-page portfolio with an interactive terminal, built with Vite and TypeScript (no framework).
 
 ## Run locally
 

@@ -499,6 +499,38 @@
             <p class="stack">Django · REST · PostgreSQL · Feb – Jun 2024</p>
           </article>
         </div>
+
+        <article class="card project reveal site-card">
+          <div class="project-text">
+            <span class="tag">This website</span>
+            <h4>stevenkwchen.dev</h4>
+            <p class="desc">
+              The page you are reading. A static single-page site in TypeScript with no framework: the terminal and
+              the dot-matrix portrait are plain DOM and canvas code. Every push to <code>main</code> is type-checked,
+              built and published by a GitHub Actions pipeline, then served over HTTPS on a custom domain.
+            </p>
+            <a class="demo" href="https://github.com/kuanwen-C/kuanwen-C.github.io" target="_blank" rel="noopener">View the source ↗</a>
+            <p class="stack">TypeScript · Vite · GitHub Actions · GitHub Pages · DNS · HTTPS</p>
+          </div>
+          <figure class="flow" aria-label="Diagram: how a change reaches the live site">
+            <div class="lane">
+              <span class="lane-label">Build · read-only permissions</span>
+              <div class="nodes">
+                <span class="node">git push</span>
+                <span class="node hl">GitHub Actions<small>install · type-check · build</small></span>
+                <span class="node">Static bundle</span>
+              </div>
+            </div>
+            <div class="lane">
+              <span class="lane-label">Deploy · the only job allowed to publish</span>
+              <div class="nodes">
+                <span class="node hl">GitHub Pages</span>
+                <span class="node">stevenkwchen.dev<small>custom domain · HTTPS</small></span>
+              </div>
+            </div>
+            <figcaption>Actions pinned to commit hashes · content security policy · protected main branch</figcaption>
+          </figure>
+        </article>
       </section>
 
       <!-- ───────────── SKILLS ───────────── -->
@@ -512,6 +544,7 @@
               <li class="main">Python <small>strongest</small></li>
               <li class="main">C / C++</li>
               <li class="main">SQL</li>
+              <li>TypeScript</li>
               <li>Go</li>
               <li>MATLAB</li>
               <li>8051 assembly</li>
@@ -523,6 +556,7 @@
               <li class="main">AWS</li>
               <li class="main">Infrastructure as Code (CDK)</li>
               <li class="main">CI/CD</li>
+              <li>GitHub Actions</li>
               <li>Lambda</li>
               <li>Kinesis</li>
               <li>S3</li>
@@ -532,6 +566,7 @@
               <li>Docker</li>
               <li>Linux</li>
               <li>Git</li>
+              <li>DNS &amp; HTTPS</li>
             </ul>
           </article>
           <article class="card skill reveal">
@@ -661,7 +696,7 @@
 
     <footer class="footer">
       <span>© 2026 Steven (Kuan-Wen) Chen</span>
-      <span>Built by hand with TypeScript — press <kbd>/</kbd> to jump to the terminal</span>
+      <span>Built with TypeScript, no framework — press <kbd>/</kbd> to jump to the terminal</span>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

@@ -1669,3 +1669,22 @@ kbd {
     font-size: 13.5px;
   }
 }
+
+/* "This website" project card */
+.site-card {
+  margin-top: 16px;
+}
+.project .desc + .desc {
+  margin-top: -6px;
+}
+.project .demo {
+  display: inline-block;
+}
+code {
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.88em;
+  color: var(--accent-2);
+}
