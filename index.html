@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#140e0a" />
+    <meta
+      name="description"
+      content="Steven (Kuan-Wen) Chen — master's student in Software Engineering at Carnegie Mellon's School of Computer Science, with experience in cloud infrastructure, ML inference optimization and data pipelines."
+    />
+    <title>Steven (Kuan-Wen) Chen — Software Engineer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23140e0a'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='40' font-weight='800' text-anchor='middle' fill='%23ff7a2f'%3ES%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"></div>
+    <nav class="rail" aria-label="Section shortcuts"></nav>
+    <p class="side-note" aria-hidden="true">Steven Chen · Portfolio · 2027</p>
+
+    <header class="nav">
+      <a class="brand" href="#top"><span class="brand-dot"></span><span class="brand-name">Steven Chen</span></a>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#looking-for">Looking for</a>
+        <a href="#life">Life</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-small" data-resume href="resume.pdf" target="_blank" rel="noopener" hidden>Resume ↓</a>
+    </header>
+
+    <main>
+      <!-- ───────────── HERO ───────────── -->
+      <section class="hero" id="top">
+        <p class="badge"><span class="pulse"></span>Open to 2027 summer internship</p>
+
+        <h1 class="giant" aria-label="Steven (Kuan-Wen) Chen">Steven</h1>
+        <p class="aka">Kuan-Wen Chen</p>
+
+        <div class="hero-grid">
+          <div class="hero-left">
+            <p class="pitch">
+              I build cloud and ML infrastructure that runs <em>faster</em> and costs <em>less</em>. Currently a
+              master's student at Carnegie Mellon School of Computer Science (major in Software Engineering).
+            </p>
+
+            <p class="term-hint" id="term-hint">
+              <span class="term-hint-key">&gt;_</span>
+              <span>This terminal is live — <b>type a command</b> to learn more about me</span>
+            </p>
+            <div class="terminal attention" id="terminal">
+              <div class="term-bar">
+                <i></i><i></i><i></i>
+                <span>steven@portfolio: ~</span>
+                <em>interactive</em>
+              </div>
+              <div class="term-body" id="term-out" role="log" aria-live="polite"></div>
+              <label class="term-input">
+                <span class="ps1">~ $</span>
+                <input
+                  id="term-in"
+                  type="text"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  autocorrect="off"
+                  spellcheck="false"
+                  aria-label="Terminal command"
+                  placeholder="type here, e.g. help"
+                />
+                <kbd>Enter ↵</kbd>
+              </label>
+            </div>
+            <div class="chips" aria-label="Quick commands">
+              <span class="chips-label">or click:</span>
+              <button data-cmd="about">about</button>
+              <button data-cmd="work">work</button>
+              <button data-cmd="projects">projects</button>
+              <button data-cmd="skills">skills</button>
+              <button data-cmd="looking-for">looking-for</button>
+              <button data-cmd="life">life</button>
+              <button data-cmd="contact">contact</button>
+              <button data-cmd="help" class="ghost">help</button>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <canvas id="avatar" role="img" aria-label="Dot-matrix portrait of Steven"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── ABOUT ───────────── -->
+      <section id="about" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/about</b>$ cat intro.md</p>
+        <h2>About me</h2>
+        <div class="about">
+          <div class="about-text reveal">
+            <p class="lead">
+              I'm Steven, a master's student in Software Engineering at Carnegie Mellon's School of Computer Science.
+              I like making systems faster, cheaper and easier to operate.
+            </p>
+            <p>
+              As an undergraduate at National Cheng Kung University, I studied both software and hardware circuit
+              courses: operating systems, computer networks, database systems and algorithms on one side,
+              microprocessors and circuits on the other. That mix is why I'm comfortable anywhere from assembly on a
+              microcontroller to pipelines in the cloud.
+            </p>
+            <p>
+              Since then I've done two internships. At <b>Tomofun</b>, the company behind the Furbo pet camera, I
+              worked on MLOps and cloud infrastructure, and both of my projects were about cost. I moved the
+              object-detection model from GPUs to a cheaper AWS inference accelerator and restructured the pipeline
+              around it, which <b>cut total inference processing time by over 50%</b>. I also redesigned the AWS
+              pipeline that collects inference logs, which <b>cut daily log storage by nearly 90%</b> (from about
+              180 GB to 20 GB) and made the data queryable with SQL.
+            </p>
+            <p>
+              At <b>GliaCloud</b>, a video advertising company, I worked as a data scientist. I built the Django ETL
+              pipelines that bring Google Ad Manager data into the team's dashboards, then built on that data: a
+              statistical model that spots unusual traffic and alerts engineers on Slack, a mathematical model that
+              forecasts monthly revenue deductions, and a click-through-rate model with an LLM assistant that
+              suggests new video ad concepts.
+            </p>
+            <p>
+              I'm now looking for a <b>Summer 2027 software engineering internship</b> focused on infrastructure and
+              data pipelines.
+            </p>
+          </div>
+
+          <div class="education reveal" id="education">
+            <p class="tag">Education</p>
+            <article class="card edu">
+              <time>Expected Dec 2027</time>
+              <h4>Carnegie Mellon University</h4>
+              <p>School of Computer Science</p>
+              <p class="soft">Master of Software Engineering, Scalable Systems · Pittsburgh, PA</p>
+              <p class="soft">
+                Currently taking: Design Patterns · Formal Methods · API Design · Quality Assurance
+              </p>
+            </article>
+            <article class="card edu">
+              <time>Jun 2024</time>
+              <h4>National Cheng Kung University</h4>
+              <p>B.S. in Engineering Science · Coursework focus: Computer Science</p>
+              <p class="soft">
+                CS coursework GPA 3.88 / 4.00 · Data Structures · Algorithms · Operating Systems · Computer Networks ·
+                Database Systems · Computer Organization and Assembly Language · Microprocessor and Interface Design ·
+                Image Recognition AI and Robotics Lab
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── WORK ───────────── -->
+      <section id="work" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/work</b>$ ls -l experience/</p>
+        <h2>Experience</h2>
+
+        <div class="company reveal">
+          <header class="company-head">
+            <div>
+              <h3>AI Engineer Intern <span class="soft">— MLOps</span></h3>
+              <p>Tomofun (Furbo) · Taipei, Taiwan</p>
+            </div>
+            <time>Jul 2025 – Mar 2026</time>
+          </header>
+
+          <article class="card project">
+            <div class="project-text">
+              <span class="tag">01 · Inference acceleration</span>
+              <h4>Half the processing time, on cheaper hardware</h4>
+              <dl class="par">
+                <dt>Problem</dt>
+                <dd>A legacy C/Darknet YOLOv4 pipeline ran on GPUs and inference was expensive.</dd>
+                <dt>Approach</dt>
+                <dd>
+                  Ported it to PyTorch and split it in two. The convolutional graph has fixed tensor shapes, so I
+                  compiled it with the AWS Neuron SDK for Inferentia2. Decoding and non-maximum suppression are
+                  dynamic, so I rewrote them to match the original model and ran them on parallel CPU threads on a
+                  separate instance. The accelerator only does convolution.
+                </dd>
+                <dt>Result</dt>
+                <dd>
+                  <b>Over 50% less total processing time</b> than the original GPU pipeline, including pre- and
+                  post-processing.
+                </dd>
+              </dl>
+              <p class="stack">PyTorch · AWS Neuron SDK · Inferentia2 · Python · C</p>
+            </div>
+            <figure class="flow" aria-label="Diagram: hybrid inference runtime">
+              <div class="lane">
+                <span class="lane-label">Before</span>
+                <div class="nodes">
+                  <span class="node">Frames</span>
+                  <span class="node dim">YOLOv4 · all on GPU</span>
+                  <span class="node">Detections</span>
+                </div>
+              </div>
+              <div class="lane">
+                <span class="lane-label">After</span>
+                <div class="nodes">
+                  <span class="node">Frames</span>
+                  <span class="node">Preprocess</span>
+                  <span class="node hl">Conv graph<small>Inferentia2 NeuronCores</small></span>
+                  <span class="node hl">Decode + NMS<small>parallel CPU threads</small></span>
+                  <span class="node">Detections</span>
+                </div>
+              </div>
+            </figure>
+          </article>
+
+          <article class="card project">
+            <div class="project-text">
+              <span class="tag">02 · Cloud infrastructure</span>
+              <h4>A log pipeline that splits fast monitoring from heavy analytics</h4>
+              <dl class="par">
+                <dt>Problem</dt>
+                <dd>Log volume was growing, and monitoring and analytics were coupled and hard to maintain.</dd>
+                <dt>Approach</dt>
+                <dd>
+                  Redesigned and rebuilt the pipeline on AWS. Kinesis collects logs across accounts and feeds two
+                  independent paths. For analytics, Lambda filters and normalizes records, which are stored as Parquet
+                  and organized by date and log type. Everything is defined in Python with AWS CDK, with CI/CD to
+                  preview and deploy changes, plus smoke and integration tests.
+                </dd>
+                <dt>Result</dt>
+                <dd><b>Daily storage fell from ~180 GB to 20 GB</b>, and the data became queryable with SQL.</dd>
+              </dl>
+              <p class="stack">AWS CDK · Kinesis · Firehose · Lambda · S3 · Glue · Athena · CloudWatch</p>
+            </div>
+            <figure class="flow" aria-label="Diagram: decoupled monitoring and analytics pipeline">
+              <div class="lane">
+                <span class="lane-label">Ingest</span>
+                <div class="nodes">
+                  <span class="node">Inference logs<small>across AWS accounts</small></span>
+                  <span class="node hl">Kinesis Data Streams</span>
+                </div>
+              </div>
+              <div class="lane branch">
+                <span class="lane-label">Monitoring · low latency</span>
+                <div class="nodes">
+                  <span class="node">Lambda</span>
+                  <span class="node">CloudWatch dashboards</span>
+                  <span class="node">Alerts + weekly report<small>SNS · SES</small></span>
+                </div>
+              </div>
+              <div class="lane branch">
+                <span class="lane-label">Analytics · high throughput</span>
+                <div class="nodes">
+                  <span class="node">Lambda<small>filter · normalize</small></span>
+                  <span class="node hl">Parquet on S3<small>by date / log type</small></span>
+                  <span class="node">Glue + Athena SQL</span>
+                </div>
+              </div>
+              <figcaption>Defined as code with AWS CDK · deployed through CI/CD</figcaption>
+            </figure>
+          </article>
+        </div>
+
+        <div class="company reveal">
+          <header class="company-head">
+            <div>
+              <h3>Data Scientist Intern</h3>
+              <p>GliaCloud · Taipei, Taiwan</p>
+            </div>
+            <time>Jan 2024 – Sep 2024</time>
+          </header>
+
+          <p class="foundation">
+            <span class="tag">Shared foundation</span>
+            Django ETL pipelines that pull Google Ad Manager data and feed Metabase dashboards — the base the first two
+            projects below are built on.
+          </p>
+
+          <div class="trio">
+            <article class="card project compact">
+              <span class="tag">01 · Traffic anomaly alerts</span>
+              <h4>Catch unusual traffic before people notice</h4>
+              <p>
+                Compared live traffic against recurring daily, weekly and monthly patterns, and sent Slack alerts so
+                engineers could investigate early.
+              </p>
+              <figure class="flow vertical" aria-label="Diagram: anomaly detection flow">
+                <div class="nodes">
+                  <span class="node">Ad Manager data</span>
+                  <span class="node">Django ETL</span>
+                  <span class="node hl">Compare with daily / weekly / monthly baselines</span>
+                  <span class="node">Slack alert</span>
+                </div>
+              </figure>
+              <p class="stack">Django · SQL · Statistics · Slack API</p>
+            </article>
+
+            <article class="card project compact">
+              <span class="tag">02 · Revenue model</span>
+              <h4>A capped-growth model for revenue adjustments</h4>
+              <p>
+                Built an exponential model to forecast monthly revenue deductions. It estimates how long a revenue gap
+                takes to close, then maps that through a Gompertz curve to an adjustment ratio with an upper limit.
+              </p>
+              <figure class="curve" aria-label="Diagram: Gompertz curve rising towards a cap">
+                <svg viewBox="0 0 300 130" role="presentation">
+                  <line x1="24" y1="22" x2="290" y2="22" class="cap" />
+                  <text x="290" y="15" text-anchor="end">upper limit</text>
+                  <path d="M24 108 C 70 106, 96 92, 126 66 S 200 26, 290 24" class="gompertz" />
+                  <line x1="24" y1="112" x2="290" y2="112" class="axis" />
+                  <line x1="24" y1="10" x2="24" y2="112" class="axis" />
+                  <text x="157" y="127" text-anchor="middle">estimated time to close the gap</text>
+                </svg>
+                <figcaption>adjustment ratio</figcaption>
+              </figure>
+              <p class="stack">Python · Mathematical modeling · Forecasting</p>
+            </article>
+
+            <article class="card project compact">
+              <span class="tag">03 · Creative insights + LLM</span>
+              <h4>From “which ads work” to “what to make next”</h4>
+              <p>
+                Predicted video click-through rate from Twelve Labs embeddings to see which content features help, then
+                built a LangChain assistant that turns those signals into new video concepts.
+              </p>
+              <figure class="flow vertical" aria-label="Diagram: creative insights flow">
+                <div class="nodes">
+                  <span class="node">Video ads</span>
+                  <span class="node">Twelve Labs embeddings</span>
+                  <span class="node hl">CTR prediction model</span>
+                  <span class="node">LLM concept assistant</span>
+                </div>
+              </figure>
+              <p class="stack">Twelve Labs · LangChain · LLMs · Python</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── PROJECTS ───────────── -->
+      <section id="projects" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/projects</b>$ ls</p>
+        <h2>Projects</h2>
+
+        <article class="card project feature reveal">
+          <div class="project-text">
+            <span class="tag award">1st place · 2023 NCKU Engineering Science Senior Project Contest</span>
+            <h4>Badminton Serving Robot</h4>
+            <p class="desc">
+              A mobile machine that feeds and launches shuttlecocks so players can practise without a coach feeding
+              them. Five of us from different engineering majors built the mechanics, electronics and control
+              software. I owned power management and motor control: RPM feedback and PID control in C on Arduino keep
+              the launch wheels at a steady speed, so every shot lands the same way.
+            </p>
+            <figure class="flow" aria-label="Diagram: closed-loop motor control">
+              <div class="nodes">
+                <span class="node">Target RPM</span>
+                <span class="node hl">PID controller</span>
+                <span class="node">PWM</span>
+                <span class="node">Launch motor</span>
+              </div>
+              <figcaption>↺ encoder feeds measured RPM back to the controller</figcaption>
+            </figure>
+            <p class="stack">C · Arduino · PID control · Sep 2022 – Jun 2023</p>
+          </div>
+          <div class="shots">
+            <figure>
+              <img src="projects/badminton-robot.png" alt="The finished badminton serving robot" loading="lazy" />
+              <figcaption>The finished machine</figcaption>
+            </figure>
+            <figure>
+              <img src="projects/badminton-cad.png" alt="SolidWorks model of the robot" loading="lazy" />
+              <figcaption>SolidWorks design</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-text">
+          <span class="tag">Machine learning app</span>
+          <h4>Diabetes Prediction &amp; Diet Planner</h4>
+          <p class="desc">
+            A desktop app with two parts. A Random Forest predicts diabetes risk from basic health data. Then the
+            app works out daily energy needs and turns the user's goal into a daily plan of carbs, protein and fat.
+          </p>
+          <p class="stack">Python · scikit-learn · pandas · Flet</p>
+          </div>
+          <figure class="flow" aria-label="Diagram: prediction and diet planning logic">
+            <div class="lane">
+              <span class="lane-label">1 · Predict</span>
+              <div class="nodes">
+                <span class="node">Health inputs<small>glucose · blood pressure · BMI · age…</small></span>
+                <span class="node hl">Random Forest<small>many trees vote</small></span>
+                <span class="node">Risk result</span>
+              </div>
+            </div>
+            <div class="lane">
+              <span class="lane-label">2 · Plan</span>
+              <div class="nodes">
+                <span class="node">Base energy<small>Harris–Benedict</small></span>
+                <span class="node">× activity level<small>low · medium · high</small></span>
+                <span class="node hl">Daily energy (TDEE)</span>
+              </div>
+            </div>
+            <div class="tree">
+              <span class="tree-q">Goal?</span>
+              <div class="tree-leaves">
+                <span class="node">Cut<small>− 300 kcal</small></span>
+                <span class="node">Maintain<small>± 0</small></span>
+                <span class="node">Bulk<small>+ 400 kcal</small></span>
+              </div>
+              <span class="node hl tree-out">Daily plan<small>50% carbs · 25% protein · 25% fat</small></span>
+            </div>
+          </figure>
+        </article>
+
+        <div class="trio">
+          <article class="card project compact reveal">
+            <span class="tag">Edge AI · Sep 2023 – Jan 2024</span>
+            <h4>Autonomous Edge AI Navigation</h4>
+            <p>
+              A road-following vehicle on an NVIDIA Jetson Nano. Deployed ResNet-50 with TensorRT FP16 to balance speed
+              and accuracy on limited compute, and cleaned the camera input with Hough-transform preprocessing and
+              background removal.
+            </p>
+            <figure class="flow vertical" aria-label="Diagram: perception to steering">
+              <div class="nodes">
+                <span class="node">Camera</span>
+                <span class="node">Hough preprocessing</span>
+                <span class="node hl">ResNet-50<small>TensorRT FP16</small></span>
+                <span class="node">Steering</span>
+              </div>
+            </figure>
+            <a class="demo" href="https://youtu.be/vVS3AtSv0J8" target="_blank" rel="noopener">▶ Watch the demo</a>
+            <p class="stack">Jetson Nano · TensorRT · PyTorch · OpenCV</p>
+          </article>
+
+          <article class="card project compact reveal">
+            <span class="tag">Firmware · 8051</span>
+            <h4>Calculator in 8051 Assembly</h4>
+            <p>
+              A working calculator built from an 8051 microcontroller and analog circuitry I wired up myself, with
+              all of the logic written in A51 assembly. No operating system and no libraries.
+            </p>
+            <figure class="flow vertical" aria-label="Diagram: calculator signal path">
+              <div class="nodes">
+                <span class="node">Key input</span>
+                <span class="node hl">8051 MCU<small>A51 assembly</small></span>
+                <span class="node">Analog circuit + display</span>
+              </div>
+            </figure>
+            <a class="demo" href="https://youtu.be/_p4k0cZzA00" target="_blank" rel="noopener">▶ Watch the demo</a>
+            <p class="stack">8051 MCU · A51 assembly · Analog circuits</p>
+          </article>
+
+          <article class="card project compact reveal">
+            <span class="tag award">Highest score · Database System Contest</span>
+            <h4>ECO Web Platform</h4>
+            <p>
+              A reuse and recycling platform. People list equipment and second-hand items they no longer need, post
+              what they are looking for, and find matches nearby through map search. It also tracks each user's
+              carbon footprint from how and how far they commute. I led backend design in a four-person team.
+            </p>
+            <figure class="flow vertical" aria-label="Diagram: platform features on one backend">
+              <div class="nodes">
+                <span class="node">Listings + wanted posts</span>
+                <span class="node hl">Django REST APIs</span>
+                <span class="node">PostgreSQL<small>map search by location</small></span>
+                <span class="node">Carbon footprint trends</span>
+              </div>
+            </figure>
+            <p class="stack">Django · REST · PostgreSQL · Feb – Jun 2024</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────── SKILLS ───────────── -->
+      <section id="skills" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/skills</b>$ cat stack.yaml</p>
+        <h2>Skills</h2>
+        <div class="grid-3">
+          <article class="card skill reveal">
+            <h4>Languages</h4>
+            <ul class="pills">
+              <li class="main">Python <small>strongest</small></li>
+              <li class="main">C / C++</li>
+              <li class="main">SQL</li>
+              <li>Go</li>
+              <li>MATLAB</li>
+              <li>8051 assembly</li>
+            </ul>
+          </article>
+          <article class="card skill reveal">
+            <h4>Cloud &amp; infrastructure</h4>
+            <ul class="pills">
+              <li class="main">AWS</li>
+              <li class="main">Infrastructure as Code (CDK)</li>
+              <li class="main">CI/CD</li>
+              <li>Lambda</li>
+              <li>Kinesis</li>
+              <li>S3</li>
+              <li>Glue</li>
+              <li>Athena</li>
+              <li>CloudWatch</li>
+              <li>Docker</li>
+              <li>Linux</li>
+              <li>Git</li>
+            </ul>
+          </article>
+          <article class="card skill reveal">
+            <h4>ML systems &amp; inference</h4>
+            <ul class="pills">
+              <li class="main">Inference optimization</li>
+              <li class="main">PyTorch</li>
+              <li>AWS Neuron SDK</li>
+              <li>Inferentia</li>
+              <li>TensorRT</li>
+              <li>scikit-learn</li>
+              <li>LangChain</li>
+            </ul>
+          </article>
+          <article class="card skill reveal">
+            <h4>Back-end &amp; APIs</h4>
+            <ul class="pills">
+              <li class="main">Django</li>
+              <li class="main">REST APIs</li>
+              <li>API design</li>
+              <li>Web applications</li>
+              <li>Database systems</li>
+            </ul>
+          </article>
+          <article class="card skill reveal">
+            <h4>Data</h4>
+            <ul class="pills">
+              <li class="main">ETL pipelines</li>
+              <li class="main">Big data analytics</li>
+              <li class="main">Statistical modeling</li>
+              <li>Forecasting</li>
+              <li>Anomaly detection</li>
+              <li>Parquet</li>
+              <li>Metabase</li>
+            </ul>
+          </article>
+          <article class="card skill reveal">
+            <h4>Embedded &amp; firmware</h4>
+            <ul class="pills">
+              <li class="main">8051 microcontrollers</li>
+              <li class="main">Arduino</li>
+              <li>PID motor control</li>
+              <li>Jetson Nano</li>
+              <li>Analog circuits</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────── LOOKING FOR ───────────── -->
+      <section id="looking-for" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/looking-for</b>$ cat interests.txt</p>
+        <h2>What I'm looking for</h2>
+        <p class="thread reveal">
+          I want to keep building in the three areas I worked in during my internships:
+          <b>infrastructure</b>, <b>data pipelines</b> and <b>ML systems</b>. In each, this is what I can do from
+          day one.
+        </p>
+        <div class="grid-3">
+          <article class="card fit reveal">
+            <h4>Infrastructure</h4>
+            <ul>
+              <li>Stand up cloud infrastructure from scratch and define all of it as code</li>
+              <li>Set up CI/CD that previews and deploys infrastructure changes, with smoke and integration tests</li>
+              <li>Add monitoring, alerts and automated reports so systems can be operated</li>
+            </ul>
+          </article>
+          <article class="card fit reveal">
+            <h4>Data pipelines</h4>
+            <ul>
+              <li>Build data pipelines end to end: ingest, filter, normalize, store and query</li>
+              <li>Process data at scale, in batch and streaming</li>
+              <li>Design the back-end services and REST APIs around the data</li>
+            </ul>
+          </article>
+          <article class="card fit reveal">
+            <h4>ML systems (MLOps)</h4>
+            <ul>
+              <li>Profile and speed up ML inference</li>
+              <li>Move models onto cheaper, faster hardware</li>
+              <li>Track model performance in production to support retraining decisions</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────── LIFE ───────────── -->
+      <section id="life" class="section">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/life</b>$ open *.jpg</p>
+        <h2>Away from the keyboard</h2>
+        <p class="thread reveal">
+          I love to <b>travel</b>, <b>hike</b> and <b>cook</b>. Three recent favourites:
+        </p>
+        <div class="gallery">
+          <figure class="photo reveal">
+            <img src="life/waterfall.jpg" alt="A tall waterfall dropping from mossy cliffs into the sea" loading="lazy" />
+            <figcaption><b>Travel</b>Milford Sound, New Zealand</figcaption>
+          </figure>
+          <figure class="photo dots reveal">
+            <canvas id="hike" role="img" aria-label="Dot-matrix picture of a hiker on a rocky summit above a lake"></canvas>
+            <figcaption><b>Hiking</b>Up above the lake, in dots</figcaption>
+          </figure>
+          <figure class="photo reveal">
+            <img src="life/food.jpg" alt="A bowl of Taiwanese red-braised noodles with beef, carrots and greens" loading="lazy" />
+            <figcaption><b>Cooking</b>Taiwanese red-braised noodles, made by me</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ───────────── CONTACT ───────────── -->
+      <section id="contact" class="section contact">
+        <p class="prompt"><span>steven@portfolio</span>:<b>~/contact</b>$ ./say-hi.sh</p>
+        <div class="contact-card reveal">
+          <h2 class="giant small">Let's talk.</h2>
+          <p class="contact-note">
+            Happy to talk about infrastructure, data pipelines, ML systems, or anything else on this page.
+          </p>
+          <div class="contact-links">
+            <a class="btn" href="mailto:kuanwenc@andrew.cmu.edu">kuanwenc@andrew.cmu.edu</a>
+            <a class="btn btn-ghost" data-resume href="resume.pdf" target="_blank" rel="noopener" hidden>Resume ↓</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/kuanwenc/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn-ghost" href="https://github.com/kuanwen-C" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Steven (Kuan-Wen) Chen</span>
+      <span>Built by hand with TypeScript — press <kbd>/</kbd> to jump to the terminal</span>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
